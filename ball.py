@@ -8,7 +8,7 @@ PLAYER_BOUNCE = random.choice(range(-30, 30))
 class Ball(Turtle):
     def __init__(self):
         super().__init__()
-        self.shape('square')
+        self.shape('circle')
         self.color('white')
         self.speed('fastest')
         self.penup()

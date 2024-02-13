@@ -8,7 +8,7 @@ class Players(Turtle):
     def create_player(self, position):
             self.shape('square')
             self.color('white')
-            self.shapesize(1, 5)
+            self.shapesize(stretch_wid=1, stretch_len=5)
             self.penup()
             self.speed('fastest')
             self.goto(position)

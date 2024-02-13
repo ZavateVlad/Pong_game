@@ -21,10 +21,11 @@ from scoreboard import Scoreboard
 
 screen = Screen()
 screen.setworldcoordinates(-300, -300, 300, 300)
+#screen.setup(width=800, height=600)
 screen.bgcolor('black')
 
-player1_pos = (-280, -40)
-player2_pos = (280, -40)
+player1_pos = (-280, 0)
+player2_pos = (280, 0)
 
 scoreboard = Scoreboard()
 ball = Ball()
