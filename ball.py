@@ -2,7 +2,7 @@ from turtle import Turtle
 import random
 
 STARTING_POSITION = [20, 160, 200, 340]
-PLAYER_BOUNCE = random.choice(range(-60, 60))
+PLAYER_BOUNCE = random.choice(range(-30, 30))
 
 
 class Ball(Turtle):

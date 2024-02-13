@@ -13,7 +13,6 @@
 # Class for scoreboard - show score, everytime the ball resets, add a point to the other player, might inherit from the ball class
 # Class for field - set boundaries, might inherit from the ball class
 
-
 from turtle import Screen
 from player import Players
 from ball import Ball
@@ -23,11 +22,14 @@ from scoreboard import Scoreboard
 screen = Screen()
 screen.setworldcoordinates(-300, -300, 300, 300)
 screen.bgcolor('black')
+
 player1_pos = (-280, -40)
 player2_pos = (280, -40)
+
 scoreboard = Scoreboard()
 ball = Ball()
 field = Field()
+
 player1 = Players()
 player2 = Players()
 player1.create_player(player1_pos)
@@ -47,7 +49,7 @@ while is_playing:
     ball.move_ball()
 
     # Detect collision with player
-    if player1.distance(ball) < 20 or player2.distance(ball) < 20:
+    if player1.distance(ball) < 30 or player2.distance(ball) < 30:
         ball.bounce_off_players()
         ball.move_ball()
 
@@ -65,11 +67,11 @@ while is_playing:
 
     # Condition for score point
     if ball.xcor() > 290:
-        scoreboard.increase_score('Player1')
+        scoreboard.increase_score('Player 1')
         ball.reset()
 
     if ball.xcor() < -290:
-        scoreboard.increase_score('Player2')
+        scoreboard.increase_score('Player 2')
         ball.reset()
 
     #Condition to win
