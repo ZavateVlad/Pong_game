@@ -15,9 +15,9 @@ class Scoreboard(Turtle):
 
     def update_scoreboard(self):
         self.goto(player1_score)
-        self.write(f'1: {self.score}', align='center', font=FONT)
+        self.write(f'{self.score}', align='center', font=FONT)
         self.goto(player2_score)
-        self.write(f'2: {self.score}', align='center', font=FONT)
+        self.write(f'{self.score}', align='center', font=FONT)
 
     def increase_score(self):
         self.score += 1

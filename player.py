@@ -19,16 +19,23 @@ class Players:
 
     def move(self):
         for seg_num in range(len(self.segments) - 1, 0, -1):
-            self.x_coord = self.segments[seg_num - 1].xcor()
+            self.new_x = self.segments[seg_num - 1].xcor()
             self.new_y = self.segments[seg_num - 1].ycor()
-            self.segments[seg_num].goto(self.x_coord, self.new_y)
+            self.segments[seg_num].goto(self.new_x, self.new_y)
         self.head.forward(10)
 
     def up(self):
         self.head.setheading(90)
-
     def down(self):
         self.head.setheading(270)
 
 
+    def change_direction(self):
+        if self.head.ycor() < -290:
+            list(reversed(self.segments))
+            self.up()
 
+
+        elif self.head.ycor() > 290:
+            list(reversed(self.segments))
+            self.down()
