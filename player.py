@@ -1,41 +1,28 @@
 from turtle import Turtle
 
 
-class Players:
+class Players(Turtle):
     def __init__(self):
-        self.segments = []
-        #self.head = self.segments[0]
+        super().__init__()
 
-    def create_player(self, starting_position):
-        for position in starting_position:
-            self.player = Turtle('square')
-            self.player.color('white')
-            self.player.penup()
-            self.player.speed('fastest')
-            self.player.goto(position)
-            self.segments.append(self.player)
-            self.head = self.segments[0]
-            self.segments[-1].setheading(90)
-
-    def move(self):
-        for seg_num in range(len(self.segments) - 1, 0, -1):
-            self.new_x = self.segments[seg_num - 1].xcor()
-            self.new_y = self.segments[seg_num - 1].ycor()
-            self.segments[seg_num].goto(self.new_x, self.new_y)
-        self.head.forward(20)
+    def create_player(self, position):
+            self.shape('square')
+            self.color('white')
+            self.shapesize(1, 5)
+            self.penup()
+            self.speed('fastest')
+            self.goto(position)
+            self.setheading(90)
 
     def up(self):
-        self.head.setheading(90)
-    def down(self):
-        self.head.setheading(270)
+        self.setheading(90)
 
+    def down(self):
+        self.setheading(270)
 
     def change_direction(self):
-        if self.head.ycor() < -290:
-            list(reversed(self.segments))
+        if self.ycor() < -290:
             self.up()
 
-
-        elif self.head.ycor() > 290:
-            list(reversed(self.segments))
+        elif self.ycor() > 290:
             self.down()
