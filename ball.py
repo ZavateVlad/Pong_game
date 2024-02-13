@@ -1,6 +1,5 @@
 from turtle import Turtle
 import random
-from player import Players
 
 starting_direction = [20, 160, 200, 340]
 player_bounce = random.choice(range(-30, 30))
@@ -21,7 +20,7 @@ class Ball(Turtle):
     def move_ball(self):
         #direction_list = [0, 90, 180, 270]
         #self.setheading(random_direction)
-        self.forward(10)
+        self.forward(15)
 
     def bounce_off_players(self):
         last_heading = self.heading()

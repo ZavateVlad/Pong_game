@@ -22,7 +22,7 @@ class Players:
             self.new_x = self.segments[seg_num - 1].xcor()
             self.new_y = self.segments[seg_num - 1].ycor()
             self.segments[seg_num].goto(self.new_x, self.new_y)
-        self.head.forward(10)
+        self.head.forward(20)
 
     def up(self):
         self.head.setheading(90)

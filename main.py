@@ -56,12 +56,12 @@ while is_playing:
             ball.bounce_off_players()
             ball.move_ball()
 
+    # Change direction for both players if the field limit is reached
     if player1.segments[0].ycor() > 290 or player1.segments[0].ycor() < -290:
         player1.change_direction()
 
     if player2.segments[0].ycor() > 290 or player2.segments[0].ycor() < -290:
         player2.change_direction()
-
 
     # Detect collision with edges
     if ball.ycor() > 290 or ball.ycor() < -290:
@@ -69,9 +69,13 @@ while is_playing:
         ball.move_ball()
 
     # Condition for score point
-    if ball.xcor() > 290 or ball.xcor() < -290:
+    if ball.xcor() > 290:
+        scoreboard.increase_score('player1')
         ball.reset()
-    print(ball.heading())
+    if ball.xcor() < -290:
+        scoreboard.increase_score('player2')
+        ball.reset()
+
 
 
 screen.exitonclick()
